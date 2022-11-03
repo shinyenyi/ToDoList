@@ -38,6 +38,16 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.199);
 }
 
+.task-name {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.task-name:focus {
+  outline: none;
+}
+
 .input-task:focus {
   outline: none;
 }
