@@ -58,6 +58,14 @@ header {
   flex-direction: column;
 }
 
+#clear {
+  cursor: pointer;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
 .task-menu {
   display: flex;
   align-self: flex-end;
