@@ -1,6 +1,4 @@
-const tasks = Array.from(JSON.parse(localStorage.getItem('tasks') || '[]'));
-
-const addNewTask = (event, taskInput) => {
+const addNewTask = (event, taskInput, tasks) => {
   if (event.code === 'Enter') {
     if (taskInput.value) {
       const task = {
