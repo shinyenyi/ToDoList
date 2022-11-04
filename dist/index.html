@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="https://use.fontawesome.com/aeb436dbda.js"></script>
   <title>ToDoList</title>
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+
 <body>
-  
+  <section>
+    <header>
+      <div class="title">
+        <h1 class="title-name">Today's To Do</h1>
+        <i class="fa fa-refresh refresh-icon" aria-hidden="true"></i>
+      </div>
+      <input placeholder="Add to your list..." class="input-task" type="text">
+    </header>
+    <ul class="tasks-list">
+    </ul>
+    <footer>
+      clear all completed
+    </footer>
+  </section>
 </body>
+
 </html>
