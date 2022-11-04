@@ -2,8 +2,10 @@ import './style.css';
 import addNewTask from '../modules/addTask.js';
 import deleteTask from '../modules/deleteTask.js';
 import editTask from '../modules/editTask.js';
+import taskStatus from '../modules/taskStatus.js';
 
 const taskInput = document.querySelector('.input-task');
+const clearCompleted = document.getElementById('clear');
 
 let tasks = Array.from(JSON.parse(localStorage.getItem('tasks') || '[]'));
 
@@ -20,7 +22,7 @@ const createTasksList = (tasks) => {
       tasksList += `
         <li class="task-item">
           <div class="task-item-div">
-            <input class="task-checkbox" type="checkbox" name="" id="" ${checked}>
+            <input class="task-checkbox" type="checkbox" name="${task.index}" id="task-checkbox" ${checked}>
             <input id="edit-input" class="task-name" type="text" name="${task.index}" value="${task.description}">
           </div>
           <i id="${task.index}" class="fa fa-trash task-menu" aria-hidden="true"></i>
@@ -54,4 +56,19 @@ tasksListSection.addEventListener('keydown', (event) => {
     editTask(event, tasks);
     createTasksList(tasks);
   }
+});
+
+tasksListSection.addEventListener('change', (event) => {
+  tasks = Array.from(JSON.parse(localStorage.getItem('tasks') || '[]'));
+  taskStatus(event, tasks);
+});
+
+clearCompleted.addEventListener('click', () => {
+  tasks = Array.from(JSON.parse(localStorage.getItem('tasks') || '[]'));
+  tasks = tasks.filter((task) => task.completed === false);
+  tasks.forEach((task, index) => {
+    task.index = index;
+  });
+  createTasksList(tasks);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 });
