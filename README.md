@@ -12,9 +12,9 @@
 - Frameworks: N/A
 - Technologies used: npm
 
-<!-- ## Live Demo
+## Live Demo
 
-[Live Demo Link]( https://shinyenyi.github.io/devs-meet-and-chill/) -->
+[Live Demo Link]( https://shinyenyi.github.io/ToDoList/)
 
 
 ## Getting Started
